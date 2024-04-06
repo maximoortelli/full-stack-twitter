@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import {getProviders, signIn, useSession} from "next-auth/react";
 
