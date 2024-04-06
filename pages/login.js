@@ -9,13 +9,18 @@ export default function LoginPage({providers}) {
     <div className='flex items-center justify-center h-screen'>
          {Object.values(providers).map(provider => (
             <div key={provider.name}> 
-                <button 
-                     onClick={async () => {await signIn(provider.id)}}
-                     className='bg-twitterWhite pl-3 m-3 pr-5 gap-3 px-5 py-2 text-black 
-                     rounded-full flex items-center justify-between'>
+                <button
+                    onClick={async () => { await signIn(provider.id) }}
+                    className='bg-twitterWhite pl-3 m-3 pr-5 gap-3 px-5 py-2 text-black
+                               rounded-full flex items-center justify-between'>
+                              
+                    {provider.name === "Google" ? (
+                      <img src='/google.png' alt='Google' className='h-8' />
+                    ) : provider.name === "GitHub" ? (
+                      <img src='/github.png' alt='GitHub' className='h-8' />
+                    ) : null}
 
-                    <img src='/google.png' alt='' className='h-8' />
-                     Sign in with {provider.name}
+                    Sign in with {provider.name}
                 </button>
             </div>
          ))}
